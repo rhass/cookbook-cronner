@@ -1,0 +1,114 @@
+{
+  "revision_id": "0dd7c862266a2d2ba7faee8351ef7d838e60f1941cc2836c583f6fde9da6c556",
+  "name": "cronner",
+  "run_list": [
+    "recipe[cronner::default]"
+  ],
+  "named_run_lists": {
+    "install": [
+      "recipe[cronner::install]"
+    ],
+    "lwrp": [
+      "recipe[cronner_lwrp_test::default]"
+    ]
+  },
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "cron": {
+      "version": "3.0.0",
+      "identifier": "fce38b7e1531080788a705dd699075e5dca81261",
+      "dotted_decimal_identifier": "71181882386362632.2120575776287120.129630109962849",
+      "cache_key": "cron-3.0.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/3.0.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/3.0.0/download",
+        "version": "3.0.0"
+      }
+    },
+    "cronner": {
+      "version": "0.3.4",
+      "identifier": "0becbf093c411e4291e66b5a89ab6221017918e8",
+      "dotted_decimal_identifier": "3356529981669662.18737767292504491.107893898156264",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "https://github.com/rhass/cookbook-cronner",
+        "revision": "43af3901e3a6da3267ebbd386c6a41dd40975ed7",
+        "working_tree_clean": true,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/HEAD -> origin/master",
+          "origin/master"
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    },
+    "cronner_lwrp_test": {
+      "version": "0.0.1",
+      "identifier": "8b71079bd2d9c6def4fe52a9d01a75ab5b6bb198",
+      "dotted_decimal_identifier": "39249299255777734.62756817975496730.129378833641880",
+      "source": "test/fixtures/cookbooks/cronner_lwrp_test",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "https://github.com/rhass/cookbook-cronner",
+        "revision": "43af3901e3a6da3267ebbd386c6a41dd40975ed7",
+        "working_tree_clean": true,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/HEAD -> origin/master",
+          "origin/master"
+        ]
+      },
+      "source_options": {
+        "path": "test/fixtures/cookbooks/cronner_lwrp_test"
+      }
+    }
+  },
+  "default_attributes": {
+    "cron": {
+      "package_name": "cron"
+    }
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "cron",
+        "= 3.0.0"
+      ],
+      [
+        "cronner",
+        ">= 0.0.0"
+      ],
+      [
+        "cronner_lwrp_test",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "cron (3.0.0)": [
+
+      ],
+      "cronner (0.3.4)": [
+        [
+          "cron",
+          "~> 3.0.0"
+        ]
+      ],
+      "cronner_lwrp_test (0.0.1)": [
+        [
+          "cronner",
+          ">= 0.0.0"
+        ]
+      ]
+    }
+  }
+}
